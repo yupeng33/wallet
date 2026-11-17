@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+chroma_data/
+balance_hit*.log
+
+# excluded: wallet mnemonic brute-force/scanning scripts
+scanWallet.py
+scanWalletBatch.py
+
+# excluded: contains an API key secret
+AI-info/env.info

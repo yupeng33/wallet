@@ -1,0 +1,20 @@
+LLM 基础术语清单
+一、 宏观概念与定位
+LLM (Large Language Model): 大语言模型，基于 Transformer 架构，在海量文本数据上预训练的大型 AI 模型。
+AI 应用开发岗: 利用大模型 API、框架（如 LangChain）和工具，将 AI 能力落地到具体业务场景的工程岗位，不涉及底层模型算法的修改。
+Fine-Tuning (微调): 在通用大模型基础上，使用特定领域的监督数据进行二次训练，调整模型内部参数以适应特定任务。
+RAG (Retrieval-Augmented Generation): 检索增强生成。通过引入外部知识库（先检索、后生成），解决大模型时效性不足和“幻觉”问题。
+Agent (智能体): 以 LLM 为核心大脑，具备思考能力（Planning）、记忆能力（Memory）并能自主调用外部工具（Tools）执行复杂任务的系统。
+
+二、 模型核心运行参数
+Token: 模型处理文本的最小语义单元。是模型输入输出计费、限制长度的基础单位。
+Context Window (上下文窗口): 模型单次处理交互（Prompt + Completion）所能承受的最大 Token 总量。
+Temperature (温度): 控制模型输出创造性的参数。范围通常在 0-2 之间。越低越严谨（写代码用 0），越高越随机（写文案用 0.8+）。
+Top_p (核采样): 控制词汇选择多样性的另一种方式。模型仅从累积概率达到 top_p 的词汇池中进行采样。
+Prompt (提示词): 引导大模型输出期望结果的输入文本。
+
+三、 核心技术栈初探
+应用框架: LangChain / LlamaIndex (开发骨架)
+智能体编排: LangGraph / CrewAI (多 Agent 协同)
+向量数据库: Milvus / Chroma (RAG 核心存储)
+本地部署: Ollama (本地轻量级模型运行工具)
